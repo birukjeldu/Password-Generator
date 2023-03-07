@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto+Condensed:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Poppins:wght@600&family=Roboto+Condensed:wght@300&display=swap');
 body{
     background-image: url('img/bg2.jpg');
     background-repeat: repeat;
@@ -32,11 +31,11 @@ body{
     font-size: 26px;
     font-weight: bold;
     text-align: center;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', Helvetica;
 }
 .desc{
     text-align: center;
-    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Roboto Condensed', Verdana;
     margin-top: 10px;
     font-size: 18px;
 }
@@ -56,10 +55,11 @@ body{
     width: 90%;
     display: flex;
     align-items: center;
-    padding: 10px 15px;
+    padding: 5px 15px;
     word-wrap: break-word;
-    font-family: Tahoma;
+    font-family: 'Roboto Condensed',  Tahoma;
     font-size: 20px;
+    font-weight: bold;
     border-top-left-radius: 12px ;
     border-bottom-left-radius: 12px ;
    
