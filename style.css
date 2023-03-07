@@ -1,0 +1,44 @@
+/* Custom Checkbox Style */
+.checkbox{
+    position: absolute;
+    opacity: 0;
+    top: -9000px;
+    left: -9000px;
+}
+.toggle{
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: fit-content;
+    cursor: pointer;
+    margin: 20px;
+}
+
+.toggle::before{
+    content: "";
+    width: 4rem;
+    height: 1rem;
+    background-color: rgb(224, 224, 224);
+    border-radius: 1rem;
+    transition: .2s ease-in-out;
+}
+.toggle::after{
+    content: "";
+    width: 2rem;
+    height: 2rem;
+    background-color: #2BAE66FF;
+    border-radius: 50%;
+    position: absolute;   
+    transition: .2s ease-in-out; 
+    
+}
+
+.checkbox:checked + .toggle::before{
+    background-color: rgb(62, 189, 119);
+    transition: .2s ease-in-out;
+}
+.checkbox:checked + .toggle::after{
+    transform: translateX(100%) ;
+    transition: .2s ease-in;
+}
+/* End of Checkbox */
