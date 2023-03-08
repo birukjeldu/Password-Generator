@@ -24,8 +24,8 @@
       </header>
       <div class="contentWrapper">
         <div class="inputWrapper">
-          <input type="text" name="" id="" class="result" />
-          <button class="copy-btn">
+          <input type="text" name="" id="passwordField" class="result" />
+          <button class="copy-btn" id="copyBtn">
             <img src="img/copy-white.png" alt="Copy Button" />
           </button>
         </div>
@@ -36,27 +36,27 @@
         <div class="toggleWrapper">
           <div class="left">
             <div>
-              <input type="checkbox" name="" id="ch" class="checkbox" />
-              Lower Case <label class="toggle" for="ch"></label>
+              <input type="checkbox" name="" id="lowerCase" class="checkbox" checked/>
+              Lower Case <label class="toggle" for="lowerCase"></label>
             </div>
             <div>
-              <input type="checkbox" name="" id="ch2" class="checkbox" />
-              Uper Case <label class="toggle" for="ch2"></label>
+              <input type="checkbox" name="" id="upperCase" class="checkbox" />
+              Uper Case <label class="toggle" for="upperCase"></label>
             </div>
 
             <div>
-              <input type="checkbox" name="" id="ch3" class="checkbox" />
-              Number <label class="toggle" for="ch3"></label>
+              <input type="checkbox" name="" id="numberCheck" class="checkbox" />
+              Number <label class="toggle" for="numberCheck"></label>
             </div>
           </div>
           <div class="right">
             <div>
-              <input type="checkbox" name="" id="ch4" class="checkbox" />
-              Symbols <label class="toggle" for="ch4"></label>
+              <input type="checkbox" name="" id="symbolCheck" class="checkbox" />
+              Symbols <label class="toggle" for="symbolCheck"></label>
             </div>
             <div>
-              <input type="checkbox" name="" id="ch5" class="checkbox" />
-              No Duplicate <label class="toggle" for="ch5"></label>
+              <input type="checkbox" name="" id="noDuplicate" class="checkbox" />
+              No Duplicate <label class="toggle" for="noDuplicate"></label>
             </div>
 
             <!-- <div>
@@ -66,7 +66,7 @@
           </div>
         </div>
         <div class="buttonWrapper">
-            <button class="generote-btn gen-pas">Generate Password</button>
+            <button class="generote-btn gen-pas" id="generateBtn" type="submit">Generate Password</button>
             <button class="generote-btn">Create QR Code</button>
         </div>
       </div>

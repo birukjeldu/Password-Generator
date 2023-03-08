@@ -96,7 +96,18 @@ body{
 }
 .range{
     width: 70%;
-    
+    -webkit-appearance: none;
+    background-color: rgb(216, 215, 215);
+    border-radius: 10px;
+    height: 0.3rem;
+    border: 1px solid #a7a7a7;
+}
+.range::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    background-color: #3f96ff;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
 }
 .number{
     font-weight: bold;   
@@ -144,16 +155,16 @@ body{
 
 .toggle::before{
     content: "";
-    width: 4rem;
-    height: 1rem;
+    width: 3rem;
+    height: 0.5rem;
     background-color: rgb(224, 224, 224);
     border-radius: 1rem;
     transition: .2s ease-in-out;
 }
 .toggle::after{
     content: "";
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
     background-color: #3f96ff;
     border-radius: 50%;
     position: absolute;   
@@ -166,7 +177,7 @@ body{
     transition: .2s ease-in-out;
 }
 .checkbox:checked + .toggle::after{
-    transform: translateX(100%) ;
+    transform: translate(100%) ;
     transition: .2s ease-in;
 }
 /* End of Checkbox */
