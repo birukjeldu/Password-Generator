@@ -36,7 +36,28 @@ const randSymbol = function(){
     return symb[Math.floor(Math.random() * symb.length)]
 }
 
-
+function generatePassword(length,isLowerCaseOn,isUperCaseOn,isNumberOn,isSymbolOn,isNoDuplicateOn){
+    const obj ={
+        upper:randUpperCase,
+        lower:randLowerCase,
+        number:randNumber,
+        symbol:randSymbol
+    }
+    let onChecks = []
+    const password = [];
+    if(isLowerCaseOn) {onChecks.push("lower")}
+    if(isUperCaseOn) {onChecks.push("upper")}
+    if(isNumberOn) {onChecks.push("number")}
+    if(isSymbolOn) {onChecks.push("symbol")}
+    for(let i=0;i<length;i++){
+        let randKey = onChecks[Math.floor(Math.random()* onChecks.length)] 
+        randKey != undefined? password.push(obj[randKey]()):"";
+    }
+    //console.log(password.join(""))
+    return password.join("")
+    
+    
+}
 
 generateBtn.onclick = function(){
     let isLowerCaseOn = lowerCase.checked;
