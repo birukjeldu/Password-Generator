@@ -1,41 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Password Generator</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
-</head>
-<body>
-    <!-- <input type="checkbox" name="" id="ch" class="checkbox">
-    <label class="toggle" for="ch" > lower case</label> -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
+  </head>
+  <body>
     <div class="container">
-        <header class="headerWrapper">
-            <div class="logoWrapper">
-                <img src="img/logo.png" alt="Logo">
-            </div>
-            <div class="descriptionWrapper">
-                <span class="title">
-                    Password Generator
-                </span>
-                <span class="desc">
-                    Generate strong and unique passwords with ease. Protect your online identity with our password generator
-                </span>
-            </div>
-        </header>
-        <div class="contentWrapper">
-            <div class="inputWrapper">
-                <input type="text" name="" id="" class="result">
-                <button class="copy-btn">
-                    <img src="img/copy-white.png" alt="Copy Button">
-                </button>
-            </div>
+      <header class="headerWrapper">
+        <div class="logoWrapper">
+          <img src="img/logo.png" alt="Logo" />
         </div>
-        
+        <div class="descriptionWrapper">
+          <span class="title"> Password Generator </span>
+          <span class="desc">
+            Generate strong and unique passwords with ease. Protect your online
+            identity with our password generator
+          </span>
+        </div>
+      </header>
+      <div class="contentWrapper">
+        <div class="inputWrapper">
+          <input type="text" name="" id="" class="result" />
+          <button class="copy-btn">
+            <img src="img/copy-white.png" alt="Copy Button" />
+          </button>
+        </div>
+        <div class="sliderWrapper">
+          Length<input type="range" name="" class="range" value="12" id="slider" min="0" max="100" />
+          <div class="number" id="sliderValue">0</div>
+        </div>
+        <div class="toggleWrapper">
+          <div class="left">
+            <div>
+              <input type="checkbox" name="" id="ch" class="checkbox" />
+              Lower Case <label class="toggle" for="ch"></label>
+            </div>
+            <div>
+              <input type="checkbox" name="" id="ch2" class="checkbox" />
+              Uper Case <label class="toggle" for="ch2"></label>
+            </div>
+
+            <div>
+              <input type="checkbox" name="" id="ch3" class="checkbox" />
+              Number <label class="toggle" for="ch3"></label>
+            </div>
+          </div>
+          <div class="right">
+            <div>
+              <input type="checkbox" name="" id="ch4" class="checkbox" />
+              Symbols <label class="toggle" for="ch4"></label>
+            </div>
+            <div>
+              <input type="checkbox" name="" id="ch5" class="checkbox" />
+              No Duplicate <label class="toggle" for="ch5"></label>
+            </div>
+
+            <!-- <div>
+              <input type="checkbox" name="" id="ch5" class="checkbox" />
+              No-Duplicate <label class="toggle" for="ch5"></label>
+            </div> -->
+          </div>
+        </div>
+        <div class="buttonWrapper">
+            <button class="generote-btn gen-pas">Generate Password</button>
+            <button class="generote-btn">Create QR Code</button>
+        </div>
+      </div>
     </div>
-    
+
     <script src="main.js"></script>
-</body>
+  </body>
 </html>
