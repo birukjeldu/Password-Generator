@@ -62,11 +62,21 @@
         </div>
         <div class="buttonWrapper">
             <button class="generote-btn gen-pas" id="generateBtn" type="submit">Generate Password</button>
-            <button class="generote-btn">Create QR Code</button>
+            <button class="generote-btn" onclick="generateQRCode()">Create QR Code</button>
         </div>
+
+        
+      </div>
+      <div class="ha">
+
+          <div id="qrcode-2" class="qrcode qrContainer"></div>
       </div>
     </div>
+    
+
 
     <script src="main.js"></script>
+    <!-- <script src="qrcode.min.js"></script> For Offline Use -->
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
   </body>
 </html>

@@ -212,7 +212,7 @@ body{
     display: flex;
     justify-content: space-evenly;
     margin-top: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 .generote-btn{
     width: 40%;
@@ -246,6 +246,20 @@ body{
 .gen-pas:hover{
     background-color: #0d6ce0;
     border-color: #808080;
+}
+
+.qrContainer{
+    display: none; 
+    justify-content: center;
+    padding: 5px;
+    box-shadow: 1px 0px 7px 5px rgb(205 205 205 / 50%);
+    /* margin: 2.5rem auto 0.6rem auto; */
+
+}
+.ha{
+    display: flex;
+    justify-content: center;
+    padding: 10px;
 }
 
 @media (max-width:540px) {

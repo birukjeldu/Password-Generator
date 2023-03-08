@@ -15,13 +15,15 @@ sliderValue.innerHTML = slider.value;
 slider.oninput = function () {
     sliderValue.innerHTML = this.value;
     length = slider.value
-    let isLowerCaseOn = lowerCase.checked;
-let isUperCaseOn = upperCase.checked;
-let isNumberOn = numberCheck.checked;
-let isSymbolOn = symbolCheck.checked;
-//let isNoDuplicateOn = noDuplicate.checked;
-    passwordField.value = generatePassword(length, isLowerCaseOn, isUperCaseOn, isNumberOn, isSymbolOn);
+    passwordField.value = generatePassword(length, lowerCase.checked, upperCase.checked, numberCheck.checked, symbolCheck.checked);
+    generateQRCode();
 }
+//To generate a passowrd when the check boxes are turned on and off
+symbolCheck.oninput = () => { passwordField.value = generatePassword(length, lowerCase.checked, upperCase.checked, numberCheck.checked, symbolCheck.checked);generateQRCode() }
+lowerCase.oninput = () => { passwordField.value = generatePassword(length, lowerCase.checked, upperCase.checked, numberCheck.checked, symbolCheck.checked);generateQRCode() }
+numberCheck.oninput = () => { passwordField.value = generatePassword(length, lowerCase.checked, upperCase.checked, numberCheck.checked, symbolCheck.checked); generateQRCode()}
+upperCase.oninput = () => { passwordField.value = generatePassword(length, lowerCase.checked, upperCase.checked, numberCheck.checked, symbolCheck.checked); generateQRCode()}
+
 
 const randNumber = function () {
     return Math.floor(Math.random() * 10)
@@ -62,17 +64,10 @@ function generatePassword(length, isLowerCaseOn, isUperCaseOn, isNumberOn, isSym
     //console.log(password.join(""))
     return password.join("")
 
-
 }
 
 generateBtn.onclick = function () {
-    let isLowerCaseOn = lowerCase.checked;
-    let isUperCaseOn = upperCase.checked;
-    let isNumberOn = numberCheck.checked;
-    let isSymbolOn = symbolCheck.checked;
-
-    passwordField.value = generatePassword(length, isLowerCaseOn, isUperCaseOn, isNumberOn, isSymbolOn);
-
+    passwordField.value = generatePassword(length, lowerCase.checked, upperCase.checked, numberCheck.checked, symbolCheck.checked);
     //console.log(length,isLowerCaseOn,length)
 }
 copyBtn.onclick = () => {
@@ -88,5 +83,26 @@ copyBtn.onclick = () => {
             cp.innerHTML = ""
         }, 900);
 
+    }
+}
+
+function generateQRCode() {
+    let website = passwordField.value;
+    let qrcodeContainer2 = document.getElementById("qrcode-2");
+    if (website) {
+        /*With some styles*/
+        qrcodeContainer2.innerHTML = "";
+        new QRCode(qrcodeContainer2, {
+            text: website,
+            width: 200,
+            height: 200,
+            colorDark: "#000",
+            colorLight: "#ffffff",
+            correctLevel: QRCode.CorrectLevel.H
+        });
+        qrcodeContainer2.style.display = "flex"
+        
+    }else{
+        qrcodeContainer2.style.display = "none"
     }
 }
