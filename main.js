@@ -8,6 +8,7 @@ const numberCheck = document.getElementById("numberCheck")
 const symbolCheck = document.getElementById("symbolCheck")
 //const noDuplicate = document.getElementById("noDuplicate")
 const generateBtn = document.getElementById("generateBtn")
+let qrcodeContainer2 = document.getElementById("qrcode-2");
 
 let length = slider.value;
 // Updating the Lenght when the slider is moved
@@ -16,13 +17,13 @@ slider.oninput = function () {
     sliderValue.innerHTML = this.value;
     length = slider.value
     passwordField.value = generatePassword(length, lowerCase.checked, upperCase.checked, numberCheck.checked, symbolCheck.checked);
-    generateQRCode();
+    qrcodeContainer2.style.display = "none"
 }
 //To generate a passowrd when the check boxes are turned on and off
-symbolCheck.oninput = () => { passwordField.value = generatePassword(length, lowerCase.checked, upperCase.checked, numberCheck.checked, symbolCheck.checked);generateQRCode() }
-lowerCase.oninput = () => { passwordField.value = generatePassword(length, lowerCase.checked, upperCase.checked, numberCheck.checked, symbolCheck.checked);generateQRCode() }
-numberCheck.oninput = () => { passwordField.value = generatePassword(length, lowerCase.checked, upperCase.checked, numberCheck.checked, symbolCheck.checked); generateQRCode()}
-upperCase.oninput = () => { passwordField.value = generatePassword(length, lowerCase.checked, upperCase.checked, numberCheck.checked, symbolCheck.checked); generateQRCode()}
+symbolCheck.oninput = () => { passwordField.value = generatePassword(length, lowerCase.checked, upperCase.checked, numberCheck.checked, symbolCheck.checked);qrcodeContainer2.style.display = "none" }
+lowerCase.oninput = () => { passwordField.value = generatePassword(length, lowerCase.checked, upperCase.checked, numberCheck.checked, symbolCheck.checked);qrcodeContainer2.style.display = "none" }
+numberCheck.oninput = () => { passwordField.value = generatePassword(length, lowerCase.checked, upperCase.checked, numberCheck.checked, symbolCheck.checked); qrcodeContainer2.style.display = "none"}
+upperCase.oninput = () => { passwordField.value = generatePassword(length, lowerCase.checked, upperCase.checked, numberCheck.checked, symbolCheck.checked); qrcodeContainer2.style.display = "none"}
 
 
 const randNumber = function () {
@@ -87,13 +88,12 @@ copyBtn.onclick = () => {
 }
 
 function generateQRCode() {
-    let website = passwordField.value;
-    let qrcodeContainer2 = document.getElementById("qrcode-2");
-    if (website) {
+    let pass = passwordField.value;
+    if (pass) {
         /*With some styles*/
         qrcodeContainer2.innerHTML = "";
         new QRCode(qrcodeContainer2, {
-            text: website,
+            text: pass,
             width: 200,
             height: 200,
             colorDark: "#000",
