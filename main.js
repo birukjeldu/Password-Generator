@@ -69,6 +69,7 @@ function generatePassword(length, isLowerCaseOn, isUperCaseOn, isNumberOn, isSym
 
 generateBtn.onclick = function () {
     passwordField.value = generatePassword(length, lowerCase.checked, upperCase.checked, numberCheck.checked, symbolCheck.checked);
+    qrcodeContainer2.style.display = "none"
     //console.log(length,isLowerCaseOn,length)
 }
 copyBtn.onclick = () => {
@@ -83,6 +84,7 @@ copyBtn.onclick = () => {
             cp.classList.remove("cpy-popup")
             cp.innerHTML = ""
         }, 900);
+
 
     }
 }
